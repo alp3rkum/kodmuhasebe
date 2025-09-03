@@ -1,69 +1,40 @@
-# React + TypeScript + Vite
+# KodMuhasebe - Yapay Zeka Tabanlı Yazılım Projesi Fiyat Hesaplayıcı
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React bilgimi tazelemek ve halihazırda aktif olarak kullandığım PHP'yi de kullanarak basit fakat oldukça faydalı bir proje yapmak istedim. Özellikle yazılımcıların zaman zaman sorun yaşadığı fiyat belirleme alanında referans sunup destek olacak, bunu hızlı ve olabildiğince isabetli bir şekilde yapacak ve bunu proje türü bazlı gerçekleştirecek bir yazılım olan **KodMuhasebe**'yi, sadece birkaç parametreyle her türlü ekibin her türlü yazılım projesini ne kadar fiyata hazırlayabileceği konusundaki sorularınıza, Türkiye ekonomisi ve piyasa fiyatları çerçevesinde isabetli yanıt verecek şekilde hazırladım.
 
-Currently, two official plugins are available:
+## Nasıl Çalışır?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+KodMuhasebe, hesaplamalarını sizin gireceğiniz şu parametrelere göre yapar:
 
-## Expanding the ESLint configuration
+* Proje türü (ne projesi yapılacak)
+* Platformu/Kategorisi (Web, Masaüstü, mobil, otomasyon, yapay zeka vs.)
+* Geliştirileceği aşama (MVP, tam ürün, enterprise vs.)
+* Üzerinde çalışacak ekibin büyüklüğü
+* Tahmini ne kadar süreceği (saat, gün, hafta, ay cinsinden ayarlama yapılabilmektedir)
+* Kaç kişinin kullanacağı (kişiye özel, yerel veya global SaaS, ya da özellikle satış yapmak için geliştireceğiniz bir yazılım olarak alabilirsiniz)
+* Güvenlik & bug testlerinin ne kadar kapsamlı yapılacağı
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Cevap olarak ise bu parametrelere göre hesaplayacağı yaklaşık bir aralık (örn. 5000-7000₺) döner. Siz de bu aralığa göre fiyatlandırmanızı yapar veya bunu referans alarak kendi fiyatlandırmanızı oluşturabilirsiniz. Ya da eğer projeyi yaptıracak kişiyseniz bütçenizi ona göre belirleyebilirsiniz.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Örnek Hesaplama
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Proje Türü: Kurumsal Web Sitesi
+Platform/Kategori: Web
+Geliştirileceği Aşama: Tam Ürün
+Üzerinde Çalışacak Ekibin Büyüklüğü: 5
+Tahmini Süre: 6 Gün
+Kaç Kişi Kullanacak: 100-10000
+Güvenlik & bug testlerinin ne kadar kapsamlı yapılacağı: Standart Test ve Güvenlik
+Sonuç: 15000-25000TL
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Kullanılan Teknolojiler
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Projede frontend olarak **React Vite**, backend olarak **PHP**, yapay zeka teknolojisi olarak ise **Mistral AI** kullandım. Bunlara ek olarak arayüz tasarımında **Tailwind**, iletişim formundan mesaj iletmek için **PHPMailer**, rotalama için **React-Router-Dom** ve SEO ayarlarını daha özenli gerçekleştirmek için **React Helmet** kütüphanelerini kullandım.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Geliştirilme Aşaması
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Bu proje şu an **MVP/alpha** aşamasındadır, bir yazılım çözümü olarak günlük hayatta kullanılabilir durumdadır. İlerleyen tarihlerde gerçekleşen geri dönüşlere ve ortaya çıkan yeni fikirlere göre daha da geliştirilecektir.
+
+## Bu Site Yayında Mı?
+
+Tabii ki yayında. [KodMuhasebe'nin canlı MVP'sine buradan ulaşabilirsiniz.](https://alperkum.hstn.me/kodmuhasebe)
