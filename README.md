@@ -35,6 +35,10 @@ Projede frontend olarak **React Vite**, backend olarak **PHP**, yapay zeka tekno
 
 Bu proje şu an **MVP/alpha** aşamasındadır, bir yazılım çözümü olarak günlük hayatta kullanılabilir durumdadır. İlerleyen tarihlerde gerçekleşen geri dönüşlere ve ortaya çıkan yeni fikirlere göre daha da geliştirilecektir.
 
+## Esin Kaynakları
+
+Bu proje geliştirilirken [AppCost.ai](https://appcost.ai) ve [UcretH](https://www.ucreth.com/) sitelerinden esin aldım. AppCost.ai'nın basit ancak işlevsel arayüzü, UcretH'ın fiyat kıstası ve girdi alma konusundaki esnekliği KodMuhasebe'nin tasarımına ve çalışma mantığına ilham oldu.
+
 ## Bu Site Yayında Mı?
 
 Tabii ki yayında. [KodMuhasebe'nin canlı MVP'sine buradan ulaşabilirsiniz.](https://alperkum.hstn.me/kodmuhasebe)
