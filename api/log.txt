@@ -1,0 +1,1 @@
+{"id":"b744f63a5cbd43fca1b27968a677aaa6","created":1756968600,"model":"mistral-small-latest","usage":{"prompt_tokens":226,"total_tokens":239,"completion_tokens":13},"object":"chat.completion","choices":[{"index":0,"finish_reason":"stop","message":{"role":"assistant","tool_calls":null,"content":"1.500–2.500 TL"}}]}

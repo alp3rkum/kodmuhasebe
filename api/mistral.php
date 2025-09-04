@@ -47,7 +47,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 
 $response = curl_exec($ch);
 curl_close($ch);
-
+//file_put_contents('log.txt', $response);
 $decoded = json_decode($response, true);
 $content = $decoded['choices'][0]['message']['content'] ?? 'Yanıt alınamadı.';
 

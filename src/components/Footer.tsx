@@ -11,7 +11,7 @@ const Footer = () => {
         <img src={logo} alt="KodMuhasebe" width="40" />
         <h1 className="text-xl font-semibold text-gray-800">KodMuhasebe</h1>
       </div>
-      <p className="text-center md:text-left">Yapay zeka tabanlı yazılım projesi fiyat hesaplama aracı</p>
+      <p className="text-center">Yapay zeka tabanlı yazılım projesi fiyat hesaplama aracı</p>
     </div>
 
     <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">

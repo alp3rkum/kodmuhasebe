@@ -20,6 +20,7 @@ const Anasayfa = () => {
       });
 
       const response = await fetch('api/mistral.php', {
+      // const response = await fetch('http://localhost:8000/mistral.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
