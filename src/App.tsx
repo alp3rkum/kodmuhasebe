@@ -9,6 +9,8 @@ import NotFound from "./components/NotFound";
 
 import { Routes, Route } from 'react-router-dom';
 
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 function App() {
 
   return (

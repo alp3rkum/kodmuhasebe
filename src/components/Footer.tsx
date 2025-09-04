@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <>
-    <footer className="pt-3">
+  <footer className="pt-6 md:pt-3">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
     <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 pl-3">
-      <div className="flex items-center text-center space-x-3 select-none">
+      <div className="flex flex-col items-center justify-center text-center space-y-2 select-none">
         <img src={logo} alt="KodMuhasebe" width="40" />
         <h1 className="text-xl font-semibold text-gray-800">KodMuhasebe</h1>
       </div>
-      <p>Yapay zeka tabanlı yazılım projesi fiyat hesaplama aracı</p>
+      <p className="text-center md:text-left">Yapay zeka tabanlı yazılım projesi fiyat hesaplama aracı</p>
     </div>
 
     <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
