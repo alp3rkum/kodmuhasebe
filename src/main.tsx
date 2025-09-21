@@ -4,7 +4,9 @@ import App from './App.tsx'
 import favicon from './assets/favicon.ico';
 import { BrowserRouter } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { registerSW } from 'virtual:pwa-register';
 
+registerSW({ immediate: true });
 const faviconLink = document.createElement('link');
 faviconLink.rel = 'icon';
 faviconLink.type = 'image/x-icon';
@@ -37,5 +39,5 @@ document.title = "KodMuhasebe - Yapay Zeka ile Yazılım Fiyat Tahmini";
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter basename="/kodmuhasebe">
     <App />
-  </BrowserRouter>,
+  </BrowserRouter>
 )

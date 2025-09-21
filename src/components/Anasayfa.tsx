@@ -20,7 +20,7 @@ const Anasayfa = () => {
       });
 
       const response = await fetch('api/mistral.php', {
-      // const response = await fetch('http://localhost:8000/mistral.php', {
+      //const response = await fetch('http://localhost:8000/mistral.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -28,11 +28,56 @@ const Anasayfa = () => {
         body: JSON.stringify(jsonData)
       });
 
-      const data = await response.json();
-      setSonuc(data.reply);
+      const data = await response.text();
+      //console.log(data); -> for debug purposes
+      const dataJson = JSON.parse(data);
+      setSonuc(dataJson.reply.replace("**",""));
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const paylas = () => {
+    if (!formRef.current) return;
+
+    const formData = new FormData(formRef.current);
+    const get = (key: string) => formData.get(key)?.toString() || 'belirtilmemiş';
+
+    const projeTur = get('proje_tur');
+    /*const projeSeviye = get('projectGrade');
+    const ekip = get('ekip_boyutu');
+    const sure = get('deliveryAmount');
+    const sureBirim = get('deliveryUnit');
+    const kullanici = get('userScale');
+    const kalite = get('qualityLevel');*/
+
+    const sonucMesaji =
+      sonuc && sonuc !== '' && sonuc !== 'Hesaplanıyor...'
+        ? sonuc
+        : 'Henüz hesaplama yapılmadı.';
+
+    const mesaj = `
+  🛠️ ${projeTur} isimli projeniz için KodMuhasebe tarafından hesaplanan fiyat aralığı: ${sonucMesaji}
+
+  🔗 Detaylı hesaplama ve paylaşım için: https://alperkum.hstn.me/kodmuhasebe/
+    `.trim();
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: 'KodMuhasebe Fiyat Tahmini',
+          text: mesaj,
+          url: 'https://alperkum.hstn.me/kodmuhasebe/',
+        })
+        .catch((error) => console.error('Paylaşım hatası:', error));
+    } else {
+      // Masaüstü fallback: panoya kopyala
+      navigator.clipboard.writeText(mesaj)
+        .then(() => alert("📋 Mesaj panoya kopyalandı! Dilediğiniz yerde paylaşabilirsiniz."))
+        .catch(err => console.error("Kopyalama hatası:", err));
+    }
+
+
   };
 
   return (
@@ -104,7 +149,9 @@ const Anasayfa = () => {
       </section>
       <section id='sonuc' className="mt-4 p-3 mx-auto text-center">
         Sonuç: <span className="text-2xl text-indigo-600">{sonuc}</span>
-        {(sonuc != '') ? <p className="text-xs">Bu hesaplama Mistral AI kullanılarak gerçekleştirilmiştir.</p> : ''}
+        {(sonuc != '') ? <><p className="text-xs">Bu hesaplama Mistral AI kullanılarak gerçekleştirilmiştir.</p></> : ''}
+        {(sonuc != '' && sonuc != 'Hesaplanıyor...') ? <button id="paylas" onClick={paylas} className='mt-3 py-2 px-3 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold rounded focus:outline-none focus:ring-2 focus:ring-indigo-600 active:translate-y-[2px] active:scale-[0.98] active:shadow-inner transition duration-250' type="button">Paylaş</button> : ''}
+        
       </section>
     </div>
   )
