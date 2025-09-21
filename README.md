@@ -29,11 +29,11 @@ Sonuç: 15000-25000TL
 
 ## Kullanılan Teknolojiler
 
-Projede frontend olarak **React Vite**, backend olarak **PHP**, yapay zeka teknolojisi olarak ise **Mistral AI** kullandım. Bunlara ek olarak arayüz tasarımında **Tailwind**, iletişim formundan mesaj iletmek için **PHPMailer**, rotalama için **React-Router-Dom** ve SEO ayarlarını daha özenli gerçekleştirmek için **React Helmet** kütüphanelerini kullandım.
+Projede frontend olarak **React Vite**, backend olarak **PHP**, yapay zeka teknolojisi olarak ise **Mistral AI** kullandım. Bunlara ek olarak arayüz tasarımında **Tailwind**, iletişim formundan mesaj iletmek için **PHPMailer**, rotalama için **React-Router-Dom** ve SEO ayarlarını daha özenli gerçekleştirmek için **React Helmet** kütüphanelerini kullandım. Beta 1 sürümü itibariyle projede ek olarak **Progrssive Web Application (PWA)** altyapısı da bulunmaktadır, bu sayede cihazlarda online native uygulama olarak da kullanılabilir.
 
 ## Geliştirilme Aşaması
 
-Bu proje şu an **MVP/alpha** aşamasındadır, bir yazılım çözümü olarak günlük hayatta kullanılabilir durumdadır. İlerleyen tarihlerde gerçekleşen geri dönüşlere ve ortaya çıkan yeni fikirlere göre daha da geliştirilecektir.
+Bu proje şu an **beta 1** aşamasındadır, bir yazılım çözümü olarak günlük hayatta kullanılabilir durumdadır. İlerleyen tarihlerde gerçekleşen geri dönüşlere ve ortaya çıkan yeni fikirlere göre daha da geliştirilecektir.
 
 ## Esin Kaynakları
 
@@ -41,4 +41,4 @@ Bu proje geliştirilirken [AppCost.ai](https://appcost.ai) ve [UcretH](https://w
 
 ## Bu Site Yayında Mı?
 
-Tabii ki yayında. [KodMuhasebe'nin canlı MVP'sine buradan ulaşabilirsiniz.](https://alperkum.hstn.me/kodmuhasebe)
+Tabii ki yayında. [KodMuhasebe'nin canlı betasına buradan ulaşabilirsiniz.](https://alperkum.hstn.me/kodmuhasebe)
